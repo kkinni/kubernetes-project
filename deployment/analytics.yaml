@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: analytics
-        image: # ADD IMAGE HERE!!!!!! isjustintime/cd12355-analytics:0.1.0
+        image: 557613811758.dkr.ecr.us-east-1.amazonaws.com/kubernetes-project:5
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
