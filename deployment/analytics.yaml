@@ -29,14 +29,14 @@ spec:
     spec:
       containers:
       - name: analytics
-        image: 557613811758.dkr.ecr.us-east-1.amazonaws.com/kubernetes-project:5
+        image: 557613811758.dkr.ecr.us-east-1.amazonaws.com/kubernetes-project:7
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
             path: /health_check
             port: 5153
           initialDelaySeconds: 5
-          timeoutSeconds: 2
+          timeoutSeconds: 5
         readinessProbe:
           httpGet:
             path: "/readiness_check"
@@ -55,5 +55,5 @@ spec:
               name: db-secret
               key: DB_PASSWORD
         - name: DB_HOST
-          value: app-db
+          value: my-release-postgresql
       restartPolicy: Always
